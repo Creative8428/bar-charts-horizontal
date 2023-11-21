@@ -5,10 +5,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const root = am5.Root.new("chartdiv");
 
     // Set themes
-    root.setThemes([
-      am5themes_Animated.new(root),
-      am5themes_Responsive.new(root),
-    ]);
+    root.setThemes([am5themes_Animated.new(root), am5themes_Responsive.new(root)]);
 
     const translations = {
       "Category 1": {
@@ -49,45 +46,45 @@ document.addEventListener("DOMContentLoaded", () => {
     // Data
     const data = [
       {
-        "domain": "Category 1",
-        "2020": 13,
-        "2021": 15,
-        "2022": 41,
-        "2023": 3,
+        domain: "Category 1",
+        2020: 13,
+        2021: 15,
+        2022: 41,
+        2023: 3,
       },
       {
-        "domain": "Category 2",
-        "2020": 8,
-        "2021": 5,
-        "2022": 11,
-        "2023": 1,
+        domain: "Category 2",
+        2020: 8,
+        2021: 5,
+        2022: 11,
+        2023: 1,
       },
       {
-        "domain": "Category 3",
-        "2020": 17,
-        "2021": 52,
-        "2022": 51,
-        "2023": 9,
+        domain: "Category 3",
+        2020: 17,
+        2021: 52,
+        2022: 51,
+        2023: 9,
       },
       {
-        "domain": "Category 4",
-        "2020": 18,
-        "2021": 27,
-        "2022": 31,
-        "2023": 3,
+        domain: "Category 4",
+        2020: 18,
+        2021: 27,
+        2022: 31,
+        2023: 3,
       },
       {
-        "domain": "Category 5",
-        "2020": 3,
-        "2021": 19,
-        "2022": 28,
-        "2023": 2,
+        domain: "Category 5",
+        2020: 3,
+        2021: 19,
+        2022: 28,
+        2023: 2,
       },
       {
-        "domain": "Category 6",
-        "2021": 4,
-        "2022": 14,
-        "2023": 1,
+        domain: "Category 6",
+        2021: 4,
+        2022: 14,
+        2023: 1,
       },
     ];
 
@@ -270,8 +267,8 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
     exporting.events.on("dataprocessed", function (ev) {
-      for (let i = 0; i < ev.data.length; i++) {
-        ev.data[i].sum = ev.data[i].value + ev.data[i].value2;
+      for (let item of ev.data) {
+        item.sum = item.value + item.value2;
       }
     });
 
